@@ -1,0 +1,12 @@
+:root {
+  --font-family: "Open Sans", sans-serif;
+  --main-background-color: #fff;
+  --sub-background-color: #f6f6f6;
+  --main-text-color: #070707;
+  --sub-text-color: #828282;
+  --main-font-weight: 700;
+  --sub-font-weight: 400;
+  --main-font-size: 34px;
+  --sub-font-size: 18px;
+  --small-font-size: 14px;
+}
