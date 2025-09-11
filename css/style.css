@@ -1,0 +1,142 @@
+@import url(vars.css);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  /* padding: 0 15px; */
+}
+.main {
+  padding-bottom: 200px;
+}
+
+.title {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: #000;
+  margin-bottom: 80px;
+  margin-top: 120px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 370px);
+  gap: 30px;
+}
+
+.gallery__item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    360deg,
+    #241f24 0%,
+    rgba(91, 91, 91, 0.45) 34.11%,
+    rgba(187, 186, 192, 0.26) 62.5%
+  );
+  transition: opacity 0.45s linear;
+}
+
+.gallery__item:hover::after {
+  opacity: 0;
+}
+
+.gallery__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.45s linear;
+  width: 102%;
+}
+
+.gallery__title {
+  /* display: inline-block; */
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 0 0 10px 10px;
+  opacity: 0;
+  transition: all 0.45s linear;
+}
+
+.gallery__caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 20px;
+
+  opacity: 0;
+  transition: opacity 0.45s linear;
+}
+
+.gallery__caption-title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.gallery__caption-date {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.gallery__item:hover .gallery__caption {
+  opacity: 0.9;
+}
+
+.gallery__item:hover {
+  box-shadow: 1px 1px 9px 4px #0b524d;
+}
+.gallery__item:hover .gallery__title {
+  opacity: 0.9;
+}
+.gallery__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.gallery__item_col-2 {
+  grid-column: span 2;
+}
+
+.gallery__item_row-2 {
+  grid-row: span 2;
+}
+.gallery__item_square {
+  grid-column: span 2;
+  grid-row: span 2;
+}
