@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW-6 Form</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <ul class="menu">
+            <li class="menu__item">
+              <a class="menu__link" href="./index.html">Home</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#about">About me</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#skills">Skills</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#contacts">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="section">
+        <div class="container">
+          <h1 class="title">Форма для заповнення</h1>
+
+          <form class="form" action="#" method="GET">
+            <div class="wrapper gender">
+              <input
+                class="img__input"
+                type="image"
+                src="./assets/img/lilie.jpg"
+                alt="Photo"
+                width="40"
+                height="48"
+              />
+            </div>
+            <div class="wrapper">
+              <label class="form__label"
+                >Повне ім'я<input
+                  class="form__input"
+                  type="text"
+                  placeholder="Ваше ім'я"
+                  required
+                  autocomplete="on"
+              /></label>
+            </div>
+
+            <div class="wrapper">
+              <label class="form__label"
+                >Email<input
+                  class="form__input"
+                  type="email"
+                  placeholder="Ваш email"
+                  required
+                  autocomplete="on"
+              /></label>
+            </div>
+
+            <div class="wrapper">
+              <label class="form__label"
+                >Пароль<input
+                  class="form__input"
+                  type="password"
+                  required
+                  autocomplete="on"
+                  placeholder="Ваш пароль..."
+              /></label>
+            </div>
+
+            <div class="wrapper">
+              <label class="form__label"
+                >Пароль ще раз<input
+                  class="form__input"
+                  type="password"
+                  required
+                  autocomplete="on"
+                  placeholder="Ваш пароль..."
+              /></label>
+            </div>
+
+            <div class="wrapper gender">
+              <h2 class="title__gender">Стать</h2>
+              <div class="gender__item">
+                <label class="form__label"
+                  >Жіноча
+                  <input
+                    class="form__input"
+                    type="radio"
+                    name="gender"
+                    value="female"
+                    required
+                  />
+                  <span class="gender__check"></span>
+                </label>
+
+                <label class="form__label"
+                  >Чоловіча
+                  <input
+                    class="form__input"
+                    type="radio"
+                    name="gender"
+                    value="male"
+                  />
+                  <span class="gender__check"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="wrapper">
+              <label class="form__label"
+                >Вік<input
+                  class="form__input age"
+                  type="number"
+                  required
+                  autocomplete="on"
+              /></label>
+            </div>
+
+            <label for="course" class="form__label">Курс</label>
+            <select id="course" name="course" class="form__select" required>
+              <option selected disabled value="">Виберіть курс</option>
+              <option value="Front-End">Front-End</option>
+              <option value="Back-End">Back-End</option>
+              <option value="Project Management">Project Management</option>
+              <option value="QA Manual">QA Manual</option>
+            </select>
+
+            <label for="adress" class="form__label textarea"
+              >Повна адреса</label
+            >
+            <textarea
+              class="form__message"
+              name="message"
+              id="adress"
+              rows="10"
+              placeholder="Країна, регіон, місто/селище, вулиця"
+              required
+            ></textarea>
+
+            <div class="wrapper agree">
+              <input class="agree__check" id="agree" type="checkbox" required />
+              <label class="agree__text" for="agree"
+                >Я погоджуюсь з обробкою персональних даних</label
+              >
+            </div>
+
+            <div class="wrapper">
+              <button class="button" type="reset">Очистити форму</button>
+              <button class="button" type="submit">Зареєстуватись</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
