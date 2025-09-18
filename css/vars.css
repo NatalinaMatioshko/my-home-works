@@ -1,0 +1,13 @@
+:root {
+  --font-family: "Gilroy-Bold", sans-serif;
+  --second-font-family: "Gilroy-Medium ", sans-serif;
+  --sub-background-color: #f6f6f6;
+  --main-text-color: #070707;
+  --sub-text-color: #828282;
+
+  --main-font-weight: 400;
+
+  --main-font-size: 18px;
+  --sub-font-size: 34px;
+  --small-font-size: 14px;
+}
