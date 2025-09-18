@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW-13 Form's style</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./assets/img/image.svg"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <section class="section">
+        <div class="side">
+          <h2 class="title_2">Create an Account</h2>
+
+          <form class="form">
+            <div class="row">
+              <div class="col col_half">
+                <label for="first-name" class="label" required
+                  >First Name</label
+                >
+                <input type="text" id="first-name" />
+              </div>
+
+              <div class="col col_half">
+                <label for="last-name" class="label" required>Last Name</label>
+                <input type="text" id="last-name" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col col_full">
+                <label for="mail" class="label">E-mail</label>
+                <input type="email" id="mail" required />
+                <p class="text">
+                  We'll never share your email with anyone else.
+                </p>
+              </div>
+            </div>
+
+            <div class="form__gender gender">
+              <div class="gender__item">
+                <label>
+                  <input type="radio" name="gender" />
+                  <span class="gender__check"></span>Male
+                </label>
+
+                <label>
+                  <input type="radio" name="gender" />
+                  <span class="gender__check"></span>
+                  Female
+                </label>
+              </div>
+
+              <div class="row">
+                <div class="col col_half arrows">
+                  <label for="country" class="label">Country</label>
+                  <select id="country" name="country" class="select" required>
+                    <option class="selected" selected disabled value="">
+                      Select
+                    </option>
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="Italy">Italy</option>
+                    <option value="United Kindom">United Kindom</option>
+                    <option value="USA">USA</option>
+                    <option value="USA">Japan</option>
+                  </select>
+                  <img
+                    class="arrows_img"
+                    src="./assets/img/arrows.svg"
+                    alt="arrows"
+                  />
+                </div>
+
+                <div class="col col_half">
+                  <label for="city" class="label">City</label>
+                  <input type="text" id="city" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <button class="btn btn_full">Sign Up</button>
+            </div>
+
+            <div class="row text_privacy">
+              <p class="text">
+                By clicking the 'Sign Up' button, you confirm that you accept
+                our <br />
+                <span class="span"><a href="#">Terms of Use</a></span> and
+                <span class="span"><a href="#">Privacy Policy</a></span> .
+              </p>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="login-prompt">
+              <a href="">Have an account?</a>
+              <a href="">Log In</a>
+            </div>
+          </form>
+        </div>
+        <!-- ============================================================================= -->
+
+        <div class="side">
+          <h2 class="title_2">Profile</h2>
+
+          <form class="form">
+            <div class="row row_v-center">
+              <img src="./assets/img/image.png" alt="photo" />
+
+              <div class="col col_half">
+                <div class="upload-wrapper">
+                  <div class="upload-field">
+                    <input type="text" name="photo" />
+                    <img
+                      class="upload-icon-camera"
+                      src="./assets/img/camera.svg"
+                      alt="camera"
+                    />
+                  </div>
+                  <button type="reset" class="delete-btn">
+                    <img src="./assets/img/delete.svg" alt="delete" />
+                  </button>
+                </div>
+                <p class="text">Up to 1 MB (300x300 px)</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col col_half">
+                <label for="profile-name" class="label">Name</label>
+                <input type="text" id="profile-name" />
+              </div>
+
+              <div class="col col_half">
+                <label for="profile-mail" class="label">E-mail</label>
+                <input type="email" id="profile-mail" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col col_half arrows">
+                <label for="countries" class="label">Country</label>
+                <select id="countries" name="countries" class="select" required>
+                  <option class="selected" selected disabled value="">
+                    Select
+                  </option>
+                  <option value="Ukraine">Ukraine</option>
+                  <option value="Italy">Italy</option>
+                  <option value="United Kindom">United Kindom</option>
+                  <option value="USA">USA</option>
+                  <option value="USA">Japan</option>
+                </select>
+                <img
+                  class="arrows_img"
+                  src="./assets/img/arrows.svg"
+                  alt="arrows"
+                />
+              </div>
+
+              <div class="col col_half">
+                <label for="city-p" class="label">City</label>
+                <input type="text" id="city-p" />
+              </div>
+            </div>
+          </form>
+
+          <div class="row">
+            <div class="col col_half">
+              <label for="zip" class="label">Zip Code</label>
+              <input type="number" id="zip" />
+            </div>
+
+            <div class="col col_half">
+              <label for="tel" class="label">Phone Number</label>
+              <input type="tel" id="tel" />
+            </div>
+          </div>
+
+          <div class="row">
+            <button type="submit" class="btn btn_min">Update</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
