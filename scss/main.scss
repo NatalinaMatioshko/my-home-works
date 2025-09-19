@@ -16,17 +16,29 @@ body {
   font-family: v.$font-primary;
   min-height: 100vh;
 }
+ul,
+ol {
+  padding-left: 0;
+}
+a {
+  text-decoration: none;
+}
 
 .container {
   max-width: 300px;
   margin: 0 auto;
 
-  // @media screen and (min-width: 768px) {
-  //   max-width: 700px;
-  // }
-  // @media screen and (min-width: 1440px) {
-  //   max-width: 1170px;
-  // }
+  @media screen and (min-width: 768px) {
+    max-width: 700px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 1170px;
+  }
+
+  &__foo {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .title {
   font-family: v.$font-secondary;
@@ -75,23 +87,36 @@ body {
   letter-spacing: 0.05em;
   color: v.$second-text-color;
 }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+.section {
+  margin: 0;
+  &_1 {
+    background-image: url(../assets/img/mob/hero_mob.jpg);
+    @media screen and (min-width: 768px) {
+      background-image: url(../assets/img/tab/hero_tab.jpg);
+    }
+    @media screen and (min-width: 768px) {
+      background-image: url(../assets/img/desk/hero_desk.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
 
 // ======CURSOR==========
+.btn {
+  font-family: v.$font-primary;
+
+  font-weight: 700;
+  font-size: v.$main-font-size;
+  line-height: v.$main-line-height;
+  letter-spacing: 0.1em;
+  color: #fff;
+  min-width: 180px;
+  height: 46px;
+  background: v.$second-text-color;
+  border: none;
+}
+
 .menu__link,
 button {
   /* The second value here is a fallback. */
@@ -102,5 +127,37 @@ button {
   /* You may need coordinates to adjust the pointer
      for example, the custom cursor is circular and you want
      the middle to be where you click */
-  cursor: url(../assets/img/svg/cursor.svg) 15 15, move;
+  // cursor: url(../assets/img/svg/cursor.svg) 15 15, move;
+}
+
+.footer {
+  background: #f4f4f4;
+  padding: 50px 0px;
+}
+.icon__social {
+  background: #f4f4f4;
+  padding: 50px 0px;
+
+  border: 1px solid v.$second-text-color;
+  width: 24px;
+  height: 24px;
+}
+
+.menu {
+  display: flex;
+  gap: 23px;
+  &__item {
+    background: #f4f4f4;
+    &:focus {
+      fill: v.$second-text-color;
+      border: 1px solid v.$second-text-color;
+    }
+
+    @media screen and (min-width: 768px) {
+      &:hover {
+        background-color: v.$second-text-color;
+        border: 1px solid v.$second-text-color;
+      }
+    }
+  }
 }

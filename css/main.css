@@ -47,9 +47,32 @@ body {
   min-height: 100vh;
 }
 
+ul,
+ol {
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
 .container {
   max-width: 300px;
   margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 700px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+.container__foo {
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -101,6 +124,38 @@ body {
   color: #565656;
 }
 
+.section {
+  margin: 0;
+}
+.section_1 {
+  background-image: url(../assets/img/mob/hero_mob.jpg);
+}
+@media screen and (min-width: 768px) {
+  .section_1 {
+    background-image: url(../assets/img/tab/hero_tab.jpg);
+  }
+}
+@media screen and (min-width: 768px) {
+  .section_1 {
+    background-image: url(../assets/img/desk/hero_desk.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.btn {
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 166%;
+  letter-spacing: 0.1em;
+  color: #fff;
+  min-width: 180px;
+  height: 46px;
+  background: #565656;
+  border: none;
+}
+
 .menu__link,
 button {
   /* The second value here is a fallback. */
@@ -110,5 +165,35 @@ button {
   /* You may need coordinates to adjust the pointer
      for example, the custom cursor is circular and you want
      the middle to be where you click */
-  cursor: url(../assets/img/svg/cursor.svg) 15 15, move;
+}
+
+.footer {
+  background: #f4f4f4;
+  padding: 50px 0px;
+}
+
+.icon__social {
+  background: #f4f4f4;
+  padding: 50px 0px;
+  border: 1px solid #565656;
+  width: 24px;
+  height: 24px;
+}
+
+.menu {
+  display: flex;
+  gap: 23px;
+}
+.menu__item {
+  background: #f4f4f4;
+}
+.menu__item:focus {
+  fill: #565656;
+  border: 1px solid #565656;
+}
+@media screen and (min-width: 768px) {
+  .menu__item:hover {
+    background-color: #565656;
+    border: 1px solid #565656;
+  }
 }/*# sourceMappingURL=main.css.map */
