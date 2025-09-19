@@ -1,9 +1,47 @@
-* {
+@font-face {
+  font-family: "Lato";
+  src: url("../assets/fonts/Lato/Lato-Regular.woff2") format("woff2"), url("../assets/fonts/Lato/Lato-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../assets/fonts/Lato/Lato-Bold.woff2") format("woff2"), url("../assets/fonts/Lato/Lato-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RedHatDisplay";
+  src: url("../assets/fonts/Red-Hat-Display/RedHatDisplayRegular.woff2") format("woff2"), url("../assets/fonts/Red-Hat-Display/RedHatDisplayRegular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RedHatDisplay";
+  src: url("../assets/fonts/Red-Hat-Display/RedHatDisplayMedium.woff2") format("woff2"), url("../assets/fonts/Red-Hat-Display/RedHatDisplayMedium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RedHatDisplay";
+  src: url("../assets/fonts/Red-Hat-Display/RedHatDisplaySemiBold.woff2") format("woff2"), url("../assets/fonts/Red-Hat-Display/RedHatDisplaySemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   padding: 0;
+  margin: 0;
 }
 
 html,
 body {
-  min-height: 100hv;
+  min-height: 100vh;
 }/*# sourceMappingURL=main.css.map */
