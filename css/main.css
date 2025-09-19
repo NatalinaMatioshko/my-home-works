@@ -43,5 +43,72 @@
 
 html,
 body {
+  font-family: "Lato";
   min-height: 100vh;
+}
+
+.container {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: "RedHatDisplay";
+  color: #000;
+  line-height: 166%;
+  font-weight: 400;
+  line-height: 166%;
+  letter-spacing: 0.05em;
+}
+.title_1 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 167%;
+}
+.title_2 {
+  line-height: 133%;
+  font-size: 48px;
+}
+.title_3 {
+  line-height: 133%;
+  font-size: 28px;
+}
+.title_4 {
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+}
+.title_5 {
+  font-family: "Lato";
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  color: #7b7b7b;
+}
+
+.time {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 166%;
+  letter-spacing: 0.1em;
+  color: #7b7b7b;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 166%;
+  letter-spacing: 0.05em;
+  color: #565656;
+}
+
+.menu__link,
+button {
+  /* The second value here is a fallback. */
+  cursor: url(../assets/img/svg/cursor.svg), auto;
+  width: 29px;
+  height: 27px;
+  /* You may need coordinates to adjust the pointer
+     for example, the custom cursor is circular and you want
+     the middle to be where you click */
+  cursor: url(../assets/img/svg/cursor.svg) 15 15, move;
 }/*# sourceMappingURL=main.css.map */

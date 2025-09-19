@@ -1,7 +1,7 @@
 @use "./normalize";
 @use "./vars" as v;
 @use "./mixins" as m;
-@use "fonts";
+@use "./fonts";
 
 *,
 *::before,
@@ -13,5 +13,94 @@
 
 html,
 body {
+  font-family: v.$font-primary;
   min-height: 100vh;
+}
+
+.container {
+  max-width: 300px;
+  margin: 0 auto;
+
+  // @media screen and (min-width: 768px) {
+  //   max-width: 700px;
+  // }
+  // @media screen and (min-width: 1440px) {
+  //   max-width: 1170px;
+  // }
+}
+.title {
+  font-family: v.$font-secondary;
+  color: v.$main-text-color;
+  line-height: v.$main-line-height;
+  font-weight: 400;
+  line-height: 166%;
+  letter-spacing: 0.05em;
+
+  &_1 {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 167%;
+  }
+  &_2 {
+    line-height: 133%;
+    font-size: 48px;
+  }
+  &_3 {
+    line-height: 133%;
+    font-size: 28px;
+  }
+  &_4 {
+    font-weight: 500;
+    font-size: v.$second-font-size;
+    letter-spacing: 0.1em;
+  }
+  &_5 {
+    font-family: v.$font-primary;
+    font-size: v.$main-font-size;
+    letter-spacing: 0.1em;
+    color: #7b7b7b;
+  }
+}
+.time {
+  font-weight: v.$main-font-weight;
+  font-size: 16px;
+  line-height: 166%;
+  letter-spacing: 0.1em;
+  color: #7b7b7b;
+}
+.text {
+  font-weight: v.$main-font-weight;
+  font-size: v.$main-font-size;
+  line-height: v.$main-line-height;
+  letter-spacing: 0.05em;
+  color: v.$second-text-color;
+}
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+// ======CURSOR==========
+.menu__link,
+button {
+  /* The second value here is a fallback. */
+  cursor: url(../assets/img/svg/cursor.svg), auto;
+  width: 29px;
+  height: 27px;
+
+  /* You may need coordinates to adjust the pointer
+     for example, the custom cursor is circular and you want
+     the middle to be where you click */
+  cursor: url(../assets/img/svg/cursor.svg) 15 15, move;
 }
