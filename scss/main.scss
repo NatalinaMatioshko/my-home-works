@@ -1,4 +1,5 @@
 @use "./normalize";
+@use "./extends";
 @use "./vars" as v;
 @use "./mixins" as m;
 @use "./fonts";
@@ -19,9 +20,14 @@ body {
 ul,
 ol {
   padding-left: 0;
+  list-style: none;
 }
 a {
   text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
 }
 
 .container {
@@ -35,77 +41,214 @@ a {
     max-width: 1170px;
   }
 
+  &__header {
+    @extend %flex-center;
+    justify-content: space-between;
+  }
   &__foo {
     display: flex;
     flex-direction: column;
+    gap: 40px;
+    @media screen and (min-width: 1440px) {
+    }
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 768px) {
+      flex-direction: row-reverse;
+      &_2 {
+        flex-direction: row;
+      }
+    }
   }
 }
+
+.header {
+  padding: 24px 0px;
+}
+
+.logo {
+  width: 145px;
+  height: 13px;
+
+  @media screen and (min-width: 1440px) {
+    width: 142px;
+    height: 12px;
+  }
+}
+
+.icon__search {
+  width: 20px;
+  height: 20px;
+
+  @media screen and (min-width: 1440px) {
+    width: 18px;
+    height: 16px;
+  }
+}
+
+.section {
+  margin-top: 70px;
+
+  &_1 {
+    margin-top: 0;
+    min-height: 100vh;
+    padding-top: 70px;
+
+    background-image: url(../assets/img/mob/hero_mob.jpg);
+
+    @media screen and (min-width: 768px) {
+      background-image: url(../assets/img/tab/hero_tab.jpg);
+      padding-top: 0;
+    }
+    @media screen and (min-width: 1440px) {
+      background-image: url(../assets/img/desk/hero_desk.jpg);
+    }
+  }
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .title {
+  padding: 0;
   font-family: v.$font-secondary;
   color: v.$main-text-color;
   line-height: v.$main-line-height;
   font-weight: 400;
-  line-height: 166%;
   letter-spacing: 0.05em;
 
   &_1 {
     font-weight: 600;
     font-size: 30px;
     line-height: 167%;
+
+    @media screen and (min-width: 768px) {
+      padding-top: 30px;
+      max-width: 540px;
+      font-size: 36px;
+      line-height: 139%;
+    }
+    @media screen and (min-width: 1440px) {
+      padding-top: 100px;
+      font-size: 48px;
+      line-height: 133%;
+      max-width: 770px;
+    }
   }
   &_2 {
     line-height: 133%;
     font-size: 48px;
+    @media screen and (max-width: 766px) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &_foo {
+    font-size: 32px;
   }
   &_3 {
-    line-height: 133%;
-    font-size: 28px;
+    font-weight: 600;
+    font-size: v.$third-font-size;
+    line-height: 129%;
+
+    @media screen and (min-width: 768px) {
+      line-height: v.$main-line-height;
+      letter-spacing: 0.1em;
+    }
   }
   &_4 {
     font-weight: 500;
     font-size: v.$second-font-size;
     letter-spacing: 0.1em;
+    margin-top: 25px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 23px;
+    }
   }
+
   &_5 {
     font-family: v.$font-primary;
     font-size: v.$main-font-size;
     letter-spacing: 0.1em;
-    color: #7b7b7b;
+    color: v.$third-text-color;
+  }
+  &_cont {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    margin-top: 25px;
   }
 }
+.section_2 .title_4 {
+  margin-top: 30px;
+}
+.section_2 .title_5 {
+  margin-top: 50px;
+}
+.section_2 .text {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.section_2 .time {
+  margin-top: 10px;
+}
+.section_4 .title_4 {
+  max-width: 299px;
+}
+.section_5 .title_3 {
+  font-weight: 400;
+  font-size: 24px;
+  max-width: 291px;
+  margin-bottom: 15px;
+}
+
 .time {
   font-weight: v.$main-font-weight;
-  font-size: 16px;
-  line-height: 166%;
+  font-size: v.$main-font-size;
+  line-height: v.$main-line-height;
   letter-spacing: 0.1em;
-  color: #7b7b7b;
+  color: v.$third-text-color;
 }
+
 .text {
   font-weight: v.$main-font-weight;
   font-size: v.$main-font-size;
   line-height: v.$main-line-height;
   letter-spacing: 0.05em;
   color: v.$second-text-color;
-}
-.section {
-  margin: 0;
-  &_1 {
-    background-image: url(../assets/img/mob/hero_mob.jpg);
-    @media screen and (min-width: 768px) {
-      background-image: url(../assets/img/tab/hero_tab.jpg);
-    }
-    @media screen and (min-width: 768px) {
-      background-image: url(../assets/img/desk/hero_desk.jpg);
-      background-repeat: no-repeat;
-      background-position: center;
-    }
+  margin-top: 20px;
+  margin-bottom: 50px;
+  &_b {
+    margin-bottom: 0;
   }
 }
 
+.view_cont .view_link {
+  @extend %flex-center;
+  justify-content: start;
+  gap: 20px;
+  color: v.$third-text-color;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.view_link {
+  min-width: 120px;
+}
+.icon__arrow {
+  width: 23px;
+  height: 13px;
+  fill: v.$third-text-color;
+}
+.arrow_1 {
+  margin-left: 10px;
+}
 // ======CURSOR==========
 .btn {
   font-family: v.$font-primary;
-
   font-weight: 700;
   font-size: v.$main-font-size;
   line-height: v.$main-line-height;
@@ -115,9 +258,11 @@ a {
   height: 46px;
   background: v.$second-text-color;
   border: none;
+  display: block;
+  margin: 0 auto;
 }
 
-.menu__link,
+a,
 button {
   /* The second value here is a fallback. */
   cursor: url(../assets/img/svg/cursor.svg), auto;
@@ -131,33 +276,60 @@ button {
 }
 
 .footer {
-  background: #f4f4f4;
-  padding: 50px 0px;
-}
-.icon__social {
+  margin-top: 70px;
   background: #f4f4f4;
   padding: 50px 0px;
 
-  border: 1px solid v.$second-text-color;
-  width: 24px;
-  height: 24px;
+  @media screen and (min-width: 1440px) {
+    padding-top: 70px;
+    padding-bottom: 30px;
+  }
 }
 
 .menu {
   display: flex;
   gap: 23px;
-  &__item {
-    background: #f4f4f4;
-    &:focus {
-      fill: v.$second-text-color;
-      border: 1px solid v.$second-text-color;
-    }
 
-    @media screen and (min-width: 768px) {
-      &:hover {
-        background-color: v.$second-text-color;
-        border: 1px solid v.$second-text-color;
+  &__link {
+    @extend %flex-center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid v.$second-text-color;
+    background-color: #f4f4f4;
+
+    &:hover,
+    &:focus {
+      background-color: v.$second-text-color;
+      .icon__social {
+        fill: #fff;
       }
     }
   }
+}
+.icon__social {
+  width: 24px;
+  height: 24px;
+  fill: v.$second-text-color;
+}
+
+.foo_cont {
+  @extend %flex-center;
+  justify-content: space-between;
+  flex-direction: column;
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+  }
+}
+
+.small {
+  @extend %flex-center;
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
+  }
+}
+.menu_contact {
+  margin-top: 20px;
+  @extend %flex-center;
+  flex-direction: column;
+  gap: 15px;
 }

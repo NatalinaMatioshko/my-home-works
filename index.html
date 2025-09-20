@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HW 17</title>
+    <title>RWD HW 17</title>
     <link
       rel="shortcut icon"
       type="image/x-icon"
@@ -14,13 +14,20 @@
 
   <body>
     <header class="header">
-      <div class="container">
+      <div class="container container__header">
         <div class="logo__cont">
-          <svg class="logo" width="142" height="12">
+          <svg class="logo">
             <use href="./assets/img/svg/sprite.svg#logo"></use>
           </svg>
         </div>
-        <div class="menu__cont"></div>
+
+        <!-- <div class="menu__cont"></div> -->
+
+        <a class="search_a" href="#">
+          <svg class="icon icon__search">
+            <use href="./assets/img/svg/sprite.svg#search"></use>
+          </svg>
+        </a>
       </div>
     </header>
     <main class="main">
@@ -39,6 +46,23 @@
 
           <div class="container__content">
             <div class="container__card">
+              <div class="container__info">
+                <h5 class="title title_5">Technology, Interface Design</h5>
+                <h4 class="title title_4">
+                  Using UX Design to Build a Sustainable Future
+                </h4>
+                <time class="time" datetime="2020-05-06">6 May, 2020</time>
+                <p class="text">
+                  Transformation has to be driven by everybody, not just by
+                  climate groups, and we have a responsibility to use our
+                  influence to drive this.<span class="span_arrow">
+                    <svg class="icon__arrow arrow_1">
+                      <use href="./assets/img/svg/sprite.svg#arrow"></use>
+                    </svg>
+                  </span>
+                </p>
+              </div>
+
               <div class="container__img">
                 <picture>
                   <source
@@ -56,6 +80,9 @@
                   <img src="./assets/img/desk/arrow_desk.jpg" alt="arrow" />
                 </picture>
               </div>
+            </div>
+
+            <div class="container__card container__card_2">
               <div class="container__info">
                 <h5 class="title title_5">Technology, Interface Design</h5>
                 <h4 class="title title_4">
@@ -65,12 +92,15 @@
                 <p class="text">
                   Transformation has to be driven by everybody, not just by
                   climate groups, and we have a responsibility to use our
-                  influence to drive this.<span class="span_arrow">svg</span>
+                  influence to drive
+                  <span class="span_arrow">
+                    <svg class="icon__arrow arrow_1">
+                      <use href="./assets/img/svg/sprite.svg#arrow"></use>
+                    </svg>
+                  </span>
                 </p>
               </div>
-            </div>
 
-            <div class="container__card">
               <div class="container__img">
                 <picture>
                   <source
@@ -88,18 +118,6 @@
                   <img src="./assets/img/desk/blog_desk.jpg" alt="building" />
                 </picture>
               </div>
-              <div class="container__info">
-                <h5 class="title title_5">Technology, Interface Design</h5>
-                <h4 class="title title_4">
-                  Using UX Design to Build a Sustainable Future
-                </h4>
-                <time class="time" datetime="2020-05-06">6 May, 2020</time>
-                <p class="text">
-                  Transformation has to be driven by everybody, not just by
-                  climate groups, and we have a responsibility to use our
-                  influence to drive <span class="span_arrow">svg</span>
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -109,12 +127,14 @@
         <div class="container">
           <div class="container__title">
             <h3 class="title title_3">Latest Posts</h3>
-            <button class="view" type="button">
-              View All
-              <svg class="icon__arrow" width="" height="">
-                <use href=""></use>
-              </svg>
-            </button>
+            <div class="view_cont">
+              <a class="view_link" href="#"
+                >View All
+                <svg class="icon__arrow">
+                  <use href="./assets/img/svg/sprite.svg#arrow"></use>
+                </svg>
+              </a>
+            </div>
           </div>
           <div class="container__content">
             <div class="container__card">
@@ -139,8 +159,10 @@
                 </picture>
               </div>
               <div class="container__info">
-                <h5 class="title title_5">Interface Design</h5>
-                <time class="time" datetime="2020-07-08">8 June, 2020</time>
+                <div class="title_cont">
+                  <h5 class="title title_5">Interface Design</h5>
+                  <time class="time" datetime="2020-07-08">8 June, 2020</time>
+                </div>
                 <h4 class="title title_4">UX traffic light colours</h4>
                 <p class="text">
                   UI has to make a huge visual difference between warning, an
@@ -168,8 +190,10 @@
                 </picture>
               </div>
               <div class="container__info">
-                <h5 class="title title_5">Technology</h5>
-                <time class="time" datetime="2020-05-06">6 May, 2020</time>
+                <div class="title_cont">
+                  <h5 class="title title_5">Technology</h5>
+                  <time class="time" datetime="2020-05-06">6 May, 2020</time>
+                </div>
                 <h4 class="title title_4">
                   Using UX Design to Build a Sustainable Future
                 </h4>
@@ -202,10 +226,12 @@
                 </picture>
               </div>
               <div class="container__info">
-                <h5 class="title title_5">Visual Design</h5>
-                <time class="time" datetime="2020-07-08">8 June, 2020</time>
+                <div class="title_cont">
+                  <h5 class="title title_5">Visual Design</h5>
+                  <time class="time" datetime="2020-07-08">8 June, 2020</time>
+                </div>
                 <h4 class="title title_4">Creativity vs. UX</h4>
-                <p class="text">
+                <p class="text text_b">
                   Is it possible to create a delightful user experience without
                   following best UX practices?
                 </p>
@@ -219,12 +245,14 @@
         <div class="container">
           <div class="container__title">
             <h3 class="title title_3">The Most Popular</h3>
-            <button class="view" type="button">
-              View All
-              <svg class="" width="" height="">
-                <use href=""></use>
-              </svg>
-            </button>
+            <div class="view_cont">
+              <a class="view_link" href="#"
+                >View All
+                <svg class="icon__arrow">
+                  <use href="./assets/img/svg/sprite.svg#arrow"></use>
+                </svg>
+              </a>
+            </div>
           </div>
 
           <div class="container__content">
@@ -248,8 +276,10 @@
               </div>
 
               <div class="container__info">
-                <h5 class="title title_5">Interface Design</h5>
-                <time class="time" datetime="2020-07-08">8 June, 2020</time>
+                <div class="title_cont">
+                  <h5 class="title title_5">Interface Design</h5>
+                  <time class="time" datetime="2020-07-08">8 June, 2020</time>
+                </div>
                 <h4 class="title title_4">
                   Mentorship Match — How a simple LinkedIn feature can boost
                   diversity
@@ -282,8 +312,10 @@
               </div>
 
               <div class="container__info">
-                <h5 class="title title_5">Visual Design</h5>
-                <time class="time" datetime="2020-07-08">8 June, 2020</time>
+                <div class="title_cont">
+                  <h5 class="title title_5">Visual Design</h5>
+                  <time class="time" datetime="2020-07-08">8 June, 2020</time>
+                </div>
                 <h4 class="title title_4">Creativity vs. UX</h4>
                 <p class="text">
                   Is it possible to create a delightful user experience without
@@ -298,19 +330,22 @@
       <!-- =============INFO=============== -->
       <section class="section section_5">
         <div class="container">
-          <div class="cintainer__title">
+          <div class="container__title">
             <h3 class="title title_3">
-              Full-time UI/UX designer Head of Design at VeronaLabs.com
+              Full-time UI/UX designer <br />
+              Head of Design at VeronaLabs.com
             </h3>
-            <svg class="" width="" height="">
-              <use href=""></use>
+            <svg class="icon__arrow">
+              <use href="./assets/img/svg/sprite.svg#arrow"></use>
             </svg>
           </div>
           <div class="container__info">
             <p class="text">
               We work with clients around the world from our headquarters in
-              Charleston, South Carolina. We focus on naming, branding, brand
-              narratives, website design and development, and brand experiences.
+              Charleston, South Carolina. <br />
+              <br />
+              We focus on naming, branding, brand narratives, website design and
+              development, and brand experiences.
             </p>
           </div>
         </div>
@@ -319,73 +354,75 @@
     <!-- =============FOOTER=============== -->
     <footer class="footer">
       <div class="container container__foo">
-        <div>
-          <h2 class="title title_2">Need a project?</h2>
-          <ul>
-            <li>
-              Телефон:
-              <a class="text" href="tel:+12395550108">(239) 555-0108</a>
-            </li>
-            <li>
-              Email:
-              <a class="text" href="mailto:tanya.hill@example.com"
-                >tanya.hill@example.com</a
-              >
-            </li>
-          </ul>
+        <div class="foo_cont">
+          <div class="foo_cont_title">
+            <h2 class="title title_2 title_foo">Need a project?</h2>
+            <ul class="menu_contact">
+              <li class="menu_item_contact">
+                <a class="text link_cont" href="tel:+12395550108"
+                  >(239) 555-0108</a
+                >
+              </li>
+              <li class="menu_item_contact">
+                <a class="text link_cont" href="mailto:tanya.hill@example.com"
+                  >tanya.hill@example.com</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="cont_soc">
+            <ul class="menu menu__soc">
+              <li class="menu__item">
+                <a
+                  class="menu__link"
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                >
+                  <svg class="icon__social">
+                    <use href="./assets/img/svg/sprite.svg#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+
+              <li class="menu__item">
+                <a
+                  class="menu__link"
+                  href="https://www.facebook.com"
+                  target="_blank"
+                >
+                  <svg class="icon__social">
+                    <use href="./assets/img/svg/sprite.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+
+              <li class="menu__item">
+                <a class="menu__link" href="https://x.com/" target="_blank">
+                  <svg class="icon__social">
+                    <use href="./assets/img/svg/sprite.svg#twitter"></use>
+                  </svg>
+                </a>
+              </li>
+
+              <li class="menu__item">
+                <a
+                  class="menu__link"
+                  href="https://ua.linkedin.com/"
+                  target="_blank"
+                >
+                  <svg class="icon__social">
+                    <use href="./assets/img/svg/sprite.svg#linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="cont_soc">
-          <ul class="menu">
-            <li class="menu__item">
-              <a
-                class="menu__link_soc"
-                href="https://www.instagram.com/"
-                target="_blank"
-              >
-                <svg class="icon__social">
-                  <use href="./assets/img/svg/sprite.svg#instagram"></use>
-                </svg>
-              </a>
-            </li>
-
-            <li class="menu__item">
-              <a
-                class="menu__link"
-                href="https://www.facebook.com"
-                target="_blank"
-              >
-                <svg class="icon__social">
-                  <use href="./assets/img/svg/sprite.svg#facebook"></use>
-                </svg>
-              </a>
-            </li>
-
-            <li class="menu__item">
-              <a class="menu__link" href="https://x.com/" target="_blank">
-                <svg class="icon__social">
-                  <use href="./assets/img/svg/sprite.svg#twitter"></use>
-                </svg>
-              </a>
-            </li>
-
-            <li class="menu__item">
-              <a
-                class="menu__link"
-                href="https://ua.linkedin.com/"
-                target="_blank"
-              >
-                <svg class="icon__social">
-                  <use href="./assets/img/svg/sprite.svg#linkedin"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
+        <div class="small">
           <small class="text copy"
-            >&copy; Copyright Manifest Theme. <br />
-            All rights reserved.</small
+            >&copy; Copyright Manifest Theme. All rights reserved.</small
           >
         </div>
       </div>
