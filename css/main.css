@@ -1,4 +1,4 @@
-.container__header, .view_cont .view_link, .menu__link, .foo_cont, .small, .menu_contact {
+.container__header, .view_cont .view_link, .menu__link, .foo_cont, .menu_contact {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,10 +96,27 @@ img {
 }
 @media screen and (min-width: 768px) {
   .container__card {
+    margin-top: 50px;
     flex-direction: row-reverse;
+    justify-content: space-between;
   }
   .container__card_2 {
     flex-direction: row;
+  }
+  .container__card_p {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container__info {
+    max-width: 340px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -137,19 +154,27 @@ img {
 }
 .section_1 {
   margin-top: 0;
-  min-height: 100vh;
   padding-top: 70px;
+  min-height: 500px;
   background-image: url(../assets/img/mob/hero_mob.jpg);
 }
 @media screen and (min-width: 768px) {
   .section_1 {
     background-image: url(../assets/img/tab/hero_tab.jpg);
     padding-top: 0;
+    min-height: 320px;
   }
 }
 @media screen and (min-width: 1440px) {
   .section_1 {
     background-image: url(../assets/img/desk/hero_desk.jpg);
+    min-height: 600px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .section_4 .container__content {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -231,34 +256,30 @@ img {
   margin-top: 25px;
 }
 
-.section_2 .title_4 {
-  margin-top: 30px;
+@media screen and (max-width: 767px) {
+  .section_2 .title_4 {
+    margin-top: 30px;
+  }
+  .section_2 .title_5 {
+    margin-top: 50px;
+  }
+  .section_2 .text {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+  .section_2 .time {
+    margin-top: 10px;
+  }
+  .section_4 .title_4 {
+    max-width: 299px;
+  }
+  .section_5 .title_3 {
+    font-weight: 400;
+    font-size: 24px;
+    max-width: 291px;
+    margin-bottom: 15px;
+  }
 }
-
-.section_2 .title_5 {
-  margin-top: 50px;
-}
-
-.section_2 .text {
-  margin-top: 40px;
-  margin-bottom: 30px;
-}
-
-.section_2 .time {
-  margin-top: 10px;
-}
-
-.section_4 .title_4 {
-  max-width: 299px;
-}
-
-.section_5 .title_3 {
-  font-weight: 400;
-  font-size: 24px;
-  max-width: 291px;
-  margin-bottom: 15px;
-}
-
 .time {
   font-weight: 400;
   font-size: 16px;
@@ -321,11 +342,10 @@ a,
 button {
   /* The second value here is a fallback. */
   cursor: url(../assets/img/svg/cursor.svg), auto;
-  width: 29px;
-  height: 27px;
   /* You may need coordinates to adjust the pointer
      for example, the custom cursor is circular and you want
      the middle to be where you click */
+  cursor: url(../assets/img/svg/cursor.svg) 15 15, move;
 }
 
 .footer {
@@ -357,6 +377,10 @@ button {
   fill: #fff;
 }
 
+.link_cont {
+  color: #000;
+}
+
 .icon__social {
   width: 24px;
   height: 24px;
@@ -366,6 +390,7 @@ button {
 .foo_cont {
   justify-content: space-between;
   flex-direction: column;
+  gap: 40px;
 }
 @media screen and (min-width: 1440px) {
   .foo_cont {
@@ -373,6 +398,9 @@ button {
   }
 }
 
+.small {
+  text-align: center;
+}
 @media screen and (min-width: 768px) {
   .small {
     font-size: 12px;

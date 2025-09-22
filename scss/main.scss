@@ -56,10 +56,29 @@ img {
     display: flex;
     flex-direction: column;
     @media screen and (min-width: 768px) {
+      margin-top: 50px;
       flex-direction: row-reverse;
+      justify-content: space-between;
       &_2 {
         flex-direction: row;
       }
+      &_p {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__info {
+    @media screen and (min-width: 768px) {
+      max-width: 340px;
+    }
+  }
+  &__title {
+    @media screen and (min-width: 768px) {
+      // @extend %flex-center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }
@@ -93,22 +112,34 @@ img {
 
   &_1 {
     margin-top: 0;
-    min-height: 100vh;
     padding-top: 70px;
-
+    min-height: 500px;
     background-image: url(../assets/img/mob/hero_mob.jpg);
 
     @media screen and (min-width: 768px) {
       background-image: url(../assets/img/tab/hero_tab.jpg);
       padding-top: 0;
+      min-height: 320px;
     }
     @media screen and (min-width: 1440px) {
       background-image: url(../assets/img/desk/hero_desk.jpg);
+      min-height: 600px;
     }
   }
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  @media screen and (min-width: 1440px) {
+    // margin-top: 90px;
+  }
+}
+
+.section_4 .container__content {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .title {
@@ -137,6 +168,7 @@ img {
       max-width: 770px;
     }
   }
+
   &_2 {
     line-height: 133%;
     font-size: 48px;
@@ -183,27 +215,30 @@ img {
     margin-top: 25px;
   }
 }
-.section_2 .title_4 {
-  margin-top: 30px;
-}
-.section_2 .title_5 {
-  margin-top: 50px;
-}
-.section_2 .text {
-  margin-top: 40px;
-  margin-bottom: 30px;
-}
-.section_2 .time {
-  margin-top: 10px;
-}
-.section_4 .title_4 {
-  max-width: 299px;
-}
-.section_5 .title_3 {
-  font-weight: 400;
-  font-size: 24px;
-  max-width: 291px;
-  margin-bottom: 15px;
+
+@media screen and (max-width: 767px) {
+  .section_2 .title_4 {
+    margin-top: 30px;
+  }
+  .section_2 .title_5 {
+    margin-top: 50px;
+  }
+  .section_2 .text {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+  .section_2 .time {
+    margin-top: 10px;
+  }
+  .section_4 .title_4 {
+    max-width: 299px;
+  }
+  .section_5 .title_3 {
+    font-weight: 400;
+    font-size: 24px;
+    max-width: 291px;
+    margin-bottom: 15px;
+  }
 }
 
 .time {
@@ -246,6 +281,7 @@ img {
 .arrow_1 {
   margin-left: 10px;
 }
+
 // ======CURSOR==========
 .btn {
   font-family: v.$font-primary;
@@ -266,13 +302,11 @@ a,
 button {
   /* The second value here is a fallback. */
   cursor: url(../assets/img/svg/cursor.svg), auto;
-  width: 29px;
-  height: 27px;
 
   /* You may need coordinates to adjust the pointer
      for example, the custom cursor is circular and you want
      the middle to be where you click */
-  // cursor: url(../assets/img/svg/cursor.svg) 15 15, move;
+  cursor: url(../assets/img/svg/cursor.svg) 15 15, move;
 }
 
 .footer {
@@ -306,6 +340,9 @@ button {
     }
   }
 }
+.link_cont {
+  color: v.$main-text-color;
+}
 .icon__social {
   width: 24px;
   height: 24px;
@@ -316,17 +353,20 @@ button {
   @extend %flex-center;
   justify-content: space-between;
   flex-direction: column;
+  gap: 40px;
   @media screen and (min-width: 1440px) {
     flex-direction: row;
   }
 }
 
 .small {
-  @extend %flex-center;
+  text-align: center;
+
   @media screen and (min-width: 768px) {
     font-size: 12px;
   }
 }
+
 .menu_contact {
   margin-top: 20px;
   @extend %flex-center;
