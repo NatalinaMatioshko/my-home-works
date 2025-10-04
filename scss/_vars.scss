@@ -1,0 +1,21 @@
+$font-primary: "Lato";
+$font-secondary: "RedHatDisplay";
+
+$main-font-size: 16px;
+$second-font-size: 22px;
+$third-font-size: 28px;
+
+$main-text-color: #000;
+$second-text-color: #565656;
+
+$third-text-color: #7b7b7b;
+
+$main-line-height: 166%;
+$main-font-weight: 400;
+$second-font-weight: 600;
+
+$width_container: 1440px;
+$adaptive_width_container: calc($width_container / 2);
+
+$tablet: 768px;
+$desktop: 992px;

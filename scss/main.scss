@@ -1,0 +1,557 @@
+@use "./normalize";
+@use "./extends";
+@use "./vars" as v;
+@use "./mixins" as m;
+@use "./fonts";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: v.$font-primary;
+  min-height: 100vh;
+}
+ul,
+ol {
+  padding-left: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.header,
+.banner,
+.blog,
+.footer {
+  padding: 0 calc(50vw - (v.$adaptive_width_container));
+
+  @media screen and (max-width: 1200px) {
+    padding: 0 calc(50vw - calc((v.$adaptive_width_container) - 3%));
+  }
+
+  @media screen and (max-width: 992px) {
+    padding: 0 calc(50vw - calc((v.$adaptive_width_container) - 27%));
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0 15px;
+  }
+}
+
+.container {
+  // margin: 0 auto;
+
+  // max-width: 300px;
+
+  // @media screen and (min-width: 768px) {
+  //   max-width: 700px;
+  // }
+  // @media screen and (min-width: 1440px) {
+  //   max-width: 1170px;
+  // }
+
+  &__header {
+    @extend %flex-center;
+    justify-content: space-between;
+  }
+  &__foo {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @media screen and (min-width: 1440px) {
+    }
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 768px) {
+      margin-top: 50px;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      &_2 {
+        flex-direction: row;
+      }
+      &_p {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__info {
+    @media screen and (min-width: 768px) {
+      max-width: 340px;
+    }
+  }
+  &__title {
+    @media screen and (min-width: 768px) {
+      // @extend %flex-center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.8vw;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  @media screen and (min-width: 992px) {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+}
+
+.nav {
+  order: 2;
+  flex-grow: 0;
+
+  @media screen and (min-width: 992px) {
+    order: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+  }
+}
+.menu {
+  position: absolute;
+  right: 0;
+  top: 70px;
+  width: 340px;
+
+  visibility: hidden;
+  opacity: 0;
+
+  flex-direction: column;
+  z-index: 2;
+  background: #85b4c7;
+  padding: 0 0;
+  gap: 0;
+  transition: all 0.5s;
+
+  transition: opacity 0.5s, visibility 0.5s;
+
+  // display: flex;
+
+  @media screen and (min-width: 992px) {
+    position: static;
+    width: auto;
+    opacity: 1;
+    visibility: visible;
+    flex-direction: row;
+    background: none;
+    gap: 2.3vw;
+    padding: 0 30px;
+  }
+  &__item {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5d9d9;
+    @media screen and (min-width: 992px) {
+      padding: 0;
+      border: none;
+    }
+  }
+  &__link {
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    // color: $font_color_title;
+    font-size: 0.875rem;
+    letter-spacing: 0.3em;
+    font-weight: 400;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: -14px;
+      transform: translateX(10%);
+      width: 0;
+      height: 1px;
+      opacity: 0;
+      background: #000;
+      transition: all 0.55s;
+    }
+
+    &:hover::after {
+      left: 0;
+      transform: translateX(12%);
+      width: 76%;
+      opacity: 1;
+    }
+  }
+}
+
+.burger {
+  display: none;
+
+  &:checked ~ .menu {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:checked ~ .burger__img {
+    transform: rotate(405deg);
+    transition: all 0.35s;
+    &::before {
+      opacity: 0;
+    }
+    &::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+  }
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+
+  &__img {
+    display: inline-block;
+    // cursor: pointer;
+    position: relative;
+    top: -3px;
+    width: 34px;
+    height: 2px;
+    background-color: #000;
+    vertical-align: middle;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      left: 0;
+    }
+    &::before {
+      top: 10px;
+    }
+    &::after {
+      top: -10px;
+    }
+
+    // cursor: pointer;
+
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+  }
+}
+
+.logo {
+  width: 145px;
+  height: 13px;
+
+  @media screen and (min-width: 1440px) {
+    width: 142px;
+    height: 12px;
+  }
+}
+
+.icon__search {
+  width: 20px;
+  height: 20px;
+
+  @media screen and (min-width: 1440px) {
+    width: 18px;
+    height: 16px;
+  }
+}
+
+.section {
+  margin-top: 70px;
+
+  &_1 {
+    margin-top: 0;
+    padding-top: 70px;
+    min-height: 500px;
+    background-image: url(../assets/img/mob/hero_mob.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 768px) {
+      background-image: url(../assets/img/tab/hero_tab.jpg);
+      padding-top: 0;
+      min-height: 320px;
+    }
+    @media screen and (min-width: 1440px) {
+      background-image: url(../assets/img/desk/hero_desk.jpg);
+      min-height: 600px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    // margin-top: 90px;
+  }
+}
+
+.section_4 .container__content {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.title {
+  padding: 0;
+  font-family: v.$font-secondary;
+  color: v.$main-text-color;
+  line-height: v.$main-line-height;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+
+  &_1 {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 167%;
+
+    @media screen and (min-width: 768px) {
+      padding-top: 30px;
+      max-width: 540px;
+      font-size: 36px;
+      line-height: 139%;
+    }
+    @media screen and (min-width: 1440px) {
+      padding-top: 100px;
+      font-size: 48px;
+      line-height: 133%;
+      max-width: 770px;
+    }
+  }
+
+  &_2 {
+    line-height: 133%;
+    font-size: 48px;
+    @media screen and (max-width: 766px) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &_foo {
+    font-size: 32px;
+  }
+  &_3 {
+    font-weight: 600;
+    font-size: v.$third-font-size;
+    line-height: 129%;
+
+    @media screen and (min-width: 768px) {
+      line-height: v.$main-line-height;
+      letter-spacing: 0.1em;
+    }
+  }
+  &_4 {
+    font-weight: 500;
+    font-size: v.$second-font-size;
+    letter-spacing: 0.1em;
+    margin-top: 25px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 23px;
+    }
+  }
+
+  &_5 {
+    font-family: v.$font-primary;
+    font-size: v.$main-font-size;
+    letter-spacing: 0.1em;
+    color: v.$third-text-color;
+  }
+  &_cont {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section_2 .title_4 {
+    margin-top: 30px;
+  }
+  .section_2 .title_5 {
+    margin-top: 50px;
+  }
+  .section_2 .text {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+  .section_2 .time {
+    margin-top: 10px;
+  }
+  .section_4 .title_4 {
+    max-width: 299px;
+  }
+  .section_5 .title_3 {
+    font-weight: 400;
+    font-size: 24px;
+    max-width: 291px;
+    margin-bottom: 15px;
+  }
+}
+
+.time {
+  font-weight: v.$main-font-weight;
+  font-size: v.$main-font-size;
+  line-height: v.$main-line-height;
+  letter-spacing: 0.1em;
+  color: v.$third-text-color;
+}
+
+.text {
+  font-weight: v.$main-font-weight;
+  font-size: v.$main-font-size;
+  line-height: v.$main-line-height;
+  letter-spacing: 0.05em;
+  color: v.$second-text-color;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  &_b {
+    margin-bottom: 0;
+  }
+}
+
+.view_cont .view_link {
+  @extend %flex-center;
+  justify-content: start;
+  gap: 20px;
+  color: v.$third-text-color;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.view_link {
+  min-width: 120px;
+}
+.icon__arrow {
+  width: 23px;
+  height: 13px;
+  fill: v.$third-text-color;
+}
+.arrow_1 {
+  margin-left: 10px;
+}
+
+// ======CURSOR==========
+.btn {
+  font-family: v.$font-primary;
+  font-weight: 700;
+  font-size: v.$main-font-size;
+  line-height: v.$main-line-height;
+  letter-spacing: 0.1em;
+  color: #fff;
+  min-width: 180px;
+  height: 46px;
+  background: v.$second-text-color;
+  border: none;
+  display: block;
+  margin: 0 auto;
+}
+
+a,
+button,
+.burger__img {
+  /* The second value here is a fallback. */
+  cursor: url(../assets/img/svg/cursor.svg), auto;
+
+  /* You may need coordinates to adjust the pointer
+     for example, the custom cursor is circular and you want
+     the middle to be where you click */
+  cursor: url(../assets/img/svg/cursor.svg) 15 15, move;
+}
+
+@media screen and (min-width: 767px) {
+  // .section_5 .container__title {
+  //   // display: flex;
+  //   // flex-direction: column;
+  // }
+  .cont_info {
+    max-width: 700px;
+  }
+  .text_info {
+    text-align: right;
+  }
+}
+
+.footer {
+  margin-top: 70px;
+  background: #f4f4f4;
+  padding: 50px 0px;
+
+  @media screen and (min-width: 1440px) {
+    padding-top: 70px;
+    padding-bottom: 30px;
+  }
+}
+
+.menuf {
+  display: flex;
+  gap: 23px;
+
+  &__link {
+    @extend %flex-center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid v.$second-text-color;
+    background-color: #f4f4f4;
+
+    &:hover,
+    &:focus {
+      background-color: v.$second-text-color;
+      .icon__social {
+        fill: #fff;
+      }
+    }
+  }
+}
+.link_cont {
+  color: v.$main-text-color;
+}
+.icon__social {
+  width: 24px;
+  height: 24px;
+  fill: v.$second-text-color;
+}
+
+.foo_cont {
+  @extend %flex-center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 40px;
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+  }
+}
+
+.small {
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+.menu_contact {
+  margin-top: 20px;
+  @extend %flex-center;
+  flex-direction: column;
+  gap: 15px;
+}
