@@ -1,0 +1,242 @@
+.menuf__link, .foo_cont, .menu_contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../assets/fonts/Lato/Lato-Regular.woff2") format("woff2"), url("../assets/fonts/Lato/Lato-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../assets/fonts/Lato/Lato-Bold.woff2") format("woff2"), url("../assets/fonts/Lato/Lato-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RedHatDisplay";
+  src: url("../assets/fonts/Red-Hat-Display/RedHatDisplayRegular.woff2") format("woff2"), url("../assets/fonts/Red-Hat-Display/RedHatDisplayRegular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RedHatDisplay";
+  src: url("../assets/fonts/Red-Hat-Display/RedHatDisplayMedium.woff2") format("woff2"), url("../assets/fonts/Red-Hat-Display/RedHatDisplayMedium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RedHatDisplay";
+  src: url("../assets/fonts/Red-Hat-Display/RedHatDisplaySemiBold.woff2") format("woff2"), url("../assets/fonts/Red-Hat-Display/RedHatDisplaySemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: "Lato";
+  min-height: 100dvh;
+}
+
+ul,
+ol {
+  padding-left: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.header,
+.section,
+.banner,
+.blog,
+.footer {
+  padding: 0 calc(50vw - 585px);
+}
+@media screen and (max-width: 1200px) {
+  .header,
+  .section,
+  .banner,
+  .blog,
+  .footer {
+    padding: 0 calc(50vw - (585px - 12%));
+  }
+}
+@media screen and (max-width: 992px) {
+  .header,
+  .section,
+  .banner,
+  .blog,
+  .footer {
+    padding: 0 calc(50vw - (585px - 27%));
+  }
+}
+@media screen and (max-width: 768px) {
+  .header,
+  .section,
+  .banner,
+  .blog,
+  .footer {
+    padding: 0 15px;
+  }
+}
+
+.header {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+@media screen and (min-width: 1170px) {
+  .header {
+    padding-top: 38px;
+    padding-bottom: 38px;
+  }
+}
+
+.title {
+  font-family: "RedHatDisplay";
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1.66;
+  letter-spacing: 0.1em;
+  color: #000;
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+}
+.title_1 {
+  font-size: 29px;
+  letter-spacing: 0.05em;
+}
+@media screen and (min-width: 768px) {
+  .title_1 {
+    font-size: 33px;
+    line-height: 1.51515;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .title_1 {
+    margin-bottom: 70px;
+    font-size: 48px;
+    line-height: 1.33333;
+  }
+}
+
+.section {
+  margin-bottom: 70px;
+}
+@media screen and (min-width: 1170px) {
+  .section {
+    margin-bottom: 90px;
+  }
+}
+
+.text {
+  font-family: "Lato";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.05em;
+  color: #565656;
+}
+@media screen and (min-width: 768px) {
+  .text {
+    font-size: 19px;
+    line-height: 1.68421;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1170px) {
+  .text {
+    letter-spacing: 0.1em;
+  }
+}
+
+.footer {
+  background: #f4f4f4;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+@media screen and (min-width: 1440px) {
+  .footer {
+    padding-top: 70px;
+    padding-bottom: 30px;
+  }
+}
+
+.menuf {
+  display: flex;
+  gap: 23px;
+}
+.menuf__link {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #000;
+  background-color: #f4f4f4;
+}
+.menuf__link:hover, .menuf__link:focus {
+  background-color: #000;
+}
+.menuf__link:hover .icon__social, .menuf__link:focus .icon__social {
+  fill: #fff;
+}
+
+.link_cont {
+  color: #565656;
+}
+
+.icon__social {
+  width: 24px;
+  height: 24px;
+  fill: #000;
+}
+
+.foo_cont {
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 40px;
+}
+@media screen and (min-width: 1440px) {
+  .foo_cont {
+    flex-direction: row;
+  }
+}
+
+.small {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .small {
+    font-size: 12px;
+  }
+}
+
+.menu_contact {
+  margin-top: 20px;
+  flex-direction: column;
+  gap: 15px;
+}/*# sourceMappingURL=main.css.map */

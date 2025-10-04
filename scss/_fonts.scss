@@ -1,0 +1,20 @@
+@use "./mixins" as m;
+@use "./vars" as v;
+
+@include m.font-face(v.$font-primary, "../assets/fonts/Lato/Lato-Regular", 400);
+@include m.font-face(v.$font-primary, "../assets/fonts/Lato/Lato-Bold", 700);
+@include m.font-face(
+  v.$font-secondary,
+  "../assets/fonts/Red-Hat-Display/RedHatDisplayRegular",
+  400
+);
+@include m.font-face(
+  v.$font-secondary,
+  "../assets/fonts/Red-Hat-Display/RedHatDisplayMedium",
+  500
+);
+@include m.font-face(
+  v.$font-secondary,
+  "../assets/fonts/Red-Hat-Display/RedHatDisplaySemiBold",
+  600
+);

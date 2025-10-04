@@ -1,0 +1,27 @@
+@use "./vars" as v;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: v.$font-primary;
+  min-height: 100dvh;
+}
+ul,
+ol {
+  padding-left: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
