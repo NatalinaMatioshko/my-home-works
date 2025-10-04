@@ -94,11 +94,30 @@
   margin-top: 0;
 }
 // =============footer=============
+//   color: #fff;
+//   min-width: 180px;
+//   height: 46px;
+//   background: v.$second-text-color;
+//   border: none;
+//   display: block;
+//   margin: 0 auto;
+// }
+
+a,
+button {
+  /* The second value here is a fallback. */
+  cursor: url(../assets/img/svg/cursor.svg), auto;
+
+  /* You may need coordinates to adjust the pointer
+     for example, the custom cursor is circular and you want
+     the middle to be where you click */
+  cursor: url(../assets/img/svg/cursor.svg) 15 15, move;
+}
 
 .footer {
+  margin-top: 70px;
   background: #f4f4f4;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 50px 0px;
 
   @media screen and (min-width: 1440px) {
     padding-top: 70px;
@@ -106,7 +125,7 @@
   }
 }
 
-.menuf {
+.menu {
   display: flex;
   gap: 23px;
 
