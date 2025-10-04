@@ -79,6 +79,7 @@
   line-height: 2;
   letter-spacing: 0.05em;
   color: #565656;
+  margin-top: 20px;
 
   @media screen and (min-width: 768px) {
     font-size: 19px;
@@ -88,6 +89,9 @@
   @media screen and (min-width: 768px) and (max-width: 1170px) {
     letter-spacing: 0.1em;
   }
+}
+.section_2 .text {
+  margin-top: 0;
 }
 // =============footer=============
 
