@@ -93,33 +93,19 @@
 .section_2 .text {
   margin-top: 0;
 }
-// =============footer=============
-//   color: #fff;
-//   min-width: 180px;
-//   height: 46px;
-//   background: v.$second-text-color;
-//   border: none;
-//   display: block;
-//   margin: 0 auto;
-// }
 
 a,
 button {
-  /* The second value here is a fallback. */
-  cursor: url(../assets/img/svg/cursor.svg), auto;
-
-  /* You may need coordinates to adjust the pointer
-     for example, the custom cursor is circular and you want
-     the middle to be where you click */
+  cursor: url(../assets//img/svg/cursor.svg), auto;
   cursor: url(../assets/img/svg/cursor.svg) 15 15, move;
 }
 
 .footer {
-  margin-top: 70px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   background: #f4f4f4;
-  padding: 50px 0px;
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1170px) {
     padding-top: 70px;
     padding-bottom: 30px;
   }
@@ -133,12 +119,12 @@ button {
     @extend %flex-center;
     width: 50px;
     height: 50px;
-    border: 1px solid v.$second-text-color;
+    border: 1px solid #565656;
     background-color: #f4f4f4;
 
     &:hover,
     &:focus {
-      background-color: v.$second-text-color;
+      background-color: #565656;
       .icon__social {
         fill: #fff;
       }
@@ -146,12 +132,12 @@ button {
   }
 }
 .link_cont {
-  color: v.$main-text-color;
+  color: v.$second-text-color;
 }
 .icon__social {
   width: 24px;
   height: 24px;
-  fill: v.$second-text-color;
+  fill: #565656;
 }
 
 .foo_cont {
@@ -166,7 +152,7 @@ button {
 
 .small {
   text-align: center;
-
+  margin-top: 40px;
   @media screen and (min-width: 768px) {
     font-size: 12px;
   }

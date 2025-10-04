@@ -183,20 +183,16 @@ img {
 
 a,
 button {
-  /* The second value here is a fallback. */
-  cursor: url(../assets/img/svg/cursor.svg), auto;
-  /* You may need coordinates to adjust the pointer
-     for example, the custom cursor is circular and you want
-     the middle to be where you click */
+  cursor: url(../assets//img/svg/cursor.svg), auto;
   cursor: url(../assets/img/svg/cursor.svg) 15 15, move;
 }
 
 .footer {
-  margin-top: 70px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   background: #f4f4f4;
-  padding: 50px 0px;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1170px) {
   .footer {
     padding-top: 70px;
     padding-bottom: 30px;
@@ -210,24 +206,24 @@ button {
 .menu__link {
   width: 50px;
   height: 50px;
-  border: 1px solid #000;
+  border: 1px solid #565656;
   background-color: #f4f4f4;
 }
 .menu__link:hover, .menu__link:focus {
-  background-color: #000;
+  background-color: #565656;
 }
 .menu__link:hover .icon__social, .menu__link:focus .icon__social {
   fill: #fff;
 }
 
 .link_cont {
-  color: #565656;
+  color: #000;
 }
 
 .icon__social {
   width: 24px;
   height: 24px;
-  fill: #000;
+  fill: #565656;
 }
 
 .foo_cont {
@@ -243,6 +239,7 @@ button {
 
 .small {
   text-align: center;
+  margin-top: 40px;
 }
 @media screen and (min-width: 768px) {
   .small {
